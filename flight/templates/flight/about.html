@@ -1,0 +1,26 @@
+{% extends 'flight/layout.html' %}
+
+{% load static %}
+
+{% block head %}
+    <title>Terms and Conditions | Flight</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/privacy-policy.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+{% endblock head %}
+
+{% block body %}
+    <section class="privacybanner-section">
+        <img src="{% static 'img/ABOUT US (1).png' %}" alt="Privacy Policy" class="privacybannerimg">
+    </section>
+    <section class="section section1">
+        <div class="container">
+            <h1>Your journey, simplified for you to fully enjoy your destination.</h1>
+             <p>In the past, booking a ticket meant long trips to the airport and waiting in endless queues. Then came the internet, revolutionizing how we travel. Booking tickets online became the norm. Despite various challenges, travel has become more accessible and affordable than ever. In 2018, around 2 billion trips were taken by Indian travelers alone.</p> 
+             <p>Yet, the experience of travel hasn’t drastically changed. It remains a stressful, unpredictable endeavor. Travel still involves unexpected hurdles and frustrating moments.</p> 
+             <p>We realized that much of this chaos stems from a lack of information. Travelers are often left in the dark, trying to piece together the details of their journey. Though travel involves a wealth of information, it is scattered across various sources and seldom reaches travelers in time, leading to confusion, anxiety, and dissatisfaction.</p>
+              <p>Today, booking a trip doesn’t always provide a clear picture. We book our flights with little understanding of when we’ll leave home, what the journey will be like, or even if we’ll make it to our destination comfortably. On the travel day, we still rush to find a taxi, panic over traffic, and stress about whether we’ll make it to the gate on time.</p> 
+              <p>We knew there had to be a better solution. So, we created Blinctrip - your personalized travel companion that guides you through your entire journey, providing the right information exactly when you need it. No more running, no more guessing.</p> 
+            <p>Our mission is to ensure you have the best possible travel experience every time. We’re committed to making it happen.</p>
+        </div>
+    </section>
+{% endblock%}

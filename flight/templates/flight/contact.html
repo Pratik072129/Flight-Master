@@ -1,0 +1,106 @@
+{% extends 'flight/layout.html' %}
+
+{% load static %}
+
+{% block head %}
+    <title>Contact | Flight</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+{% endblock head %}
+
+{% block body %}
+    <section class="section section1" style="background: url({% static 'img/contactbg.svg' %}) no-repeat top center; background-size: cover;">
+        <div class="container">
+            <div class="row">
+                <!-- Left Section with Contact Details -->
+                <div class="col-md-6 top-left-section">
+                    <div class="section-heading">
+                        <h1>We’d love to hear from you</h1>
+                        <div class="line-dec"></div>
+                    </div>
+                    <div class="contact-details">
+                        <!-- Email -->
+                        <div class="contact-method">
+                            <a href="mailto:shop.pratikmaharaj712@gmail.com" target="_blank" rel="noopener">
+                                <img src="https://www.peoplemetrics.com/hubfs/Website/email_1-blue-bottom.svg" alt="email" width="52" height="40">
+                            </a>
+                            <a href="mailto:shop.pratikmaharaj712@gmail.com" class="contact-text" style="color: #74828c;">shop.pratikmaharaj712@gmail.com</a>
+                        </div>
+                        <!-- Phone -->
+                        <div class="contact-method">
+                            <a href="tel:+9179000XXXX" target="_blank" rel="noopener">
+                                <img src="https://www.peoplemetrics.com/hubfs/Website/phone_1-blue-bottom.svg" alt="phone" width="52" height="40">
+                            </a>
+                            <a href="tel:+9179000XXXX" class="contact-text" style="color: #74828c;">(+91) 79000 XXXXX</a>
+                        </div>
+                        <!-- Address -->
+                        <div class="contact-method">
+                            <a href="https://g.page/DSCENGG?share" target="_blank" rel="noopener">
+                                <img src="https://www.peoplemetrics.com/hubfs/Website/pin-blue-bottom.svg" alt="address" width="50" height="50">
+                            </a>
+                            <a href="https://g.page/DSCENGG?share" class="contact-text" style="color: #74828c;">Vadodara, Gujarat, India - 390011</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Section with Form -->
+                <div class="col-md-6 contact-form-box">
+                    <div class="section-heading">
+                        <form id="ContactUs100" method="post" onsubmit="return ValidateForm(this);">
+                            {% csrf_token %}
+                            <script type="text/javascript">
+                                function ValidateForm(frm) {
+                                    if (frm.Name.value == "") { 
+                                        alert('Name is required.'); 
+                                        frm.Name.focus(); 
+                                        return false; 
+                                    }
+                                    if (frm.FromEmailAddress.value == "") { 
+                                        alert('Email address is required.'); 
+                                        frm.FromEmailAddress.focus(); 
+                                        return false; 
+                                    }
+                                    if (frm.FromEmailAddress.value.indexOf("@") < 1 || frm.FromEmailAddress.value.indexOf(".") < 1) { 
+                                        alert('Please enter a valid email address.'); 
+                                        frm.FromEmailAddress.focus(); 
+                                        return false; 
+                                    }
+                                    if (frm.Comments.value == "") { 
+                                        alert('Please enter comments or questions.'); 
+                                        frm.Comments.focus(); 
+                                        return false; 
+                                    }
+                                    alert('Thank you for contacting us. We will get back to you as soon as possible.');
+                                    return true;
+                                }
+                            </script>
+                            <table style="width:100%; max-width:550px; border:0;" cellpadding="8" cellspacing="0">
+                                <tr>
+                                    <td><label for="Name">Name:</label></td>
+                                    <td><input name="Name" type="text" maxlength="60" placeholder="Pratik Maharaj" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="PhoneNumber">Phone:</label></td>
+                                    <td><input name="PhoneNumber" type="tel" maxlength="15" placeholder="+91 7999089765" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="FromEmailAddress">Email:</label></td>
+                                    <td><input name="FromEmailAddress" type="email" maxlength="90" placeholder="Maharaj123@gmail.com" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="Comments">Message:</label></td>
+                                    <td><textarea name="Comments" rows="7" cols="40" placeholder="Enter your message here..." required></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <button class="btn btn-danger">Send Message</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
